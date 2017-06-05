@@ -1,0 +1,11 @@
+.landing {
+    bottom: 0px;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+}
+img{
+    height: 40px;
+    width: auto;
+}

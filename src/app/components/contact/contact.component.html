@@ -1,0 +1,112 @@
+<div class="section" id="contact">
+    <div class="landingMobile" *ngIf="typePage=='movil'"></div>
+    <div class="container">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Contacto</h4>
+                <hr>
+                <form (ngSubmit)="save(forma)" #forma="ngForm" novalidate="">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group" [ngClass]="{'has-danger': name.invalid && name.touched}">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" id="name"
+                                       placeholder="Escribe tu nombre"
+                                       name="name"
+                                        ngModel
+                                       minlength="3"
+                                       required
+                                       #name="ngModel"
+                                >
+                                <div *ngIf="name.errors?.required" class="form-control-feedback">
+                                    Este campo es requerido
+                                </div>
+                                <div *ngIf="name.errors?.minlength" class="form-control-feedback">
+                                    Debe tener al menos 3 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group" [ngClass]="{'has-danger': last_name.invalid && last_name.touched}">
+                                <label for="last_name">Apellido</label>
+                                <input type="text" class="form-control" id="last_name"
+                                       placeholder="Escribe tu apellido"
+                                       name="last_name"
+                                       ngModel
+                                       required
+                                       minlength="3"
+                                       #last_name="ngModel"
+                                >
+                                <div *ngIf="last_name.errors?.required" class="form-control-feedback">
+                                    Este campo es requerido
+                                </div>
+                                <div *ngIf="last_name.errors?.minlength" class="form-control-feedback">
+                                    Debe tener al menos 3 caracteres
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [ngClass]="{'has-danger': email.invalid && email.touched}">
+                                <label for="email">Correo</label>
+                                <input type="email" class="form-control" id="email" placeholder="Escribe tu correo"
+                                       name="email"
+                                       ngModel
+                                       required
+                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                       #email="ngModel"
+                                >
+                                <div *ngIf="email.errors?.required" class="form-control-feedback">
+                                    Este campo es requerido
+                                </div>
+                                <div *ngIf="email.errors?.pattern" class="form-control-feedback">
+                                    Este no es un correo valido
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" [ngClass]="{'has-danger': comment.invalid && comment.touched}">
+                                <label for="comment">Comentario</label>
+                                <textarea class="form-control" id="comment" rows="3"
+                                          name="comment"
+                                          ngModel
+                                          required
+                                          minlength="5"
+                                          #comment="ngModel"
+                                ></textarea>
+                                <div *ngIf="comment.errors?.required" class="form-control-feedback">
+                                    Este campo es requerido
+                                </div>
+                                <div *ngIf="comment.errors?.minlength" class="form-control-feedback">
+                                    Debe tener al menos 3 caracteres
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                            type="submit"
+                            class="btn"
+                            [ngStyle]="{'background-color': colorBackGround}"
+                            [disabled]="!forma.valid || loading"
+                    >
+                        <i [ngClass]="{'fa-save':!loading, 'fa-refresh fa-spin':loading}" class="fa"></i>
+                        Enviar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>

@@ -1,0 +1,21 @@
+.settingsElement{
+    /*background: grey;*/
+    /*border: solid black 1px;*/
+    position: fixed;
+    z-index: 5;
+    right: 0px;
+    top: 0px;
+}
+.colorPaint{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin: 5px;
+    border: solid black 1px;
+}
+.positionElement{
+    right: 20px;
+    top: 10px;
+    position: fixed;
+    z-index: 5;
+}

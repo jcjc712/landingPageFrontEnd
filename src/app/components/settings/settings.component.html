@@ -1,0 +1,72 @@
+<i *ngIf="showButton" [ngStyle]="{'background-color': colorBackGround}" class="fa fa-wrench positionElement" aria-hidden="true" (click)="openCloseSettings()"></i>
+
+
+<div *ngIf="!showButton" class="card col-8 col-sm-10 col-md-4 settingsElement">
+    <div class="card-block">
+        <h4 class="card-title">Configuraciones</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" align="right">
+                    <i [ngStyle]="{'background-color': colorBackGround}" class="fa fa-times positionElement" aria-hidden="true" (click)="openCloseSettings()"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="exampleSelect1">Tipo</label>
+                        <select [ngModel]="selectedDevice" (ngModelChange)="onChange($event)"
+                                class="form-control" id="exampleSelect1">
+                            <option active value="web">Web</option>
+                            <option value="movil">Movil</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Colores</label>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4" align="center" *ngFor="let color of colorsBackGround">
+                    <div class="colorPaint" [ngStyle]="{'background-color':color}"
+                         (click)="changeColor(color)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div *ngIf="!showButton" class="col-8 col-sm-10 col-md-4 settingsElement">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" align="right">
+                <i [ngStyle]="{'background-color': colorBackGround}" class="fa fa-times positionElement" aria-hidden="true" (click)="openCloseSettings()"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="exampleSelect1">Tipo</label>
+                    <select [ngModel]="selectedDevice" (ngModelChange)="onChange($event)"
+                            class="form-control" id="exampleSelect1">
+                        <option active value="web">Web</option>
+                        <option value="mobil">Mobil</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label>Colores</label>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4" align="center" *ngFor="let color of colorsBackGround">
+                <div class="colorPaint" [ngStyle]="{'background-color':color}"
+                     (click)="changeColor(color)"></div>
+            </div>
+        </div>
+    </div>
+</div>
+-->

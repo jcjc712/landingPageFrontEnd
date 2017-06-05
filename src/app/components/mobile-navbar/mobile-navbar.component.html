@@ -1,0 +1,50 @@
+<div *ngIf="typePage=='movil'">
+    <div class="landing-wrapper" *ngIf="showButton">
+        <div class="landing" [ngStyle]="{'background-color': colorBackGround}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" align="right">
+                        <i [ngStyle]="{'background-color': colorBackGround}" class="fa fa-bars positionElement" aria-hidden="true"
+                           (click)="showMenu()"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" align="center">
+                        <img src="assets/images/logo.png" alt="">
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="completeMenu" *ngIf="!showButton" [ngStyle]="{'background-color': colorBackGround}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" align="right">
+                    <i [ngStyle]="{'background-color': colorBackGround}" class="fa fa-times positionElement" aria-hidden="true"
+                       (click)="showMenu()"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" align="center">
+                    <img src="assets/images/logo.png" alt="">
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" align="center">
+                    <a href="#about" class="menuOption" (click)="showMenu()">Nosotros</a>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" align="center">
+                    <a href="#contact" class="menuOption" (click)="showMenu()">Contacto</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
